@@ -23,7 +23,7 @@ const Foods = () => {
         subHeading="Best for you"
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 my-20">
-        {foods && foods.map((food) => <FoodCard key={food._id} />)}
+        {foods && foods.map((food) => <FoodCard key={food._id} food={food} />)}
       </div>
     </>
   );

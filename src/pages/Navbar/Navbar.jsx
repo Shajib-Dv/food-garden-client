@@ -33,7 +33,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-2">
           <img src={logo} alt="logo" className="w-12 md:w-24" />
-          <p className="text-xl font-bold">Food Garden</p>
+          <p className="text-xl font-bold text-yellow-500">Food Garden</p>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-        <p className="btn btn-warning">Sign in</p>
+        <p className="primary-btn">Sign in</p>
       </div>
     </div>
   );

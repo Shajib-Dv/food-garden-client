@@ -2,20 +2,22 @@
 
 import React from "react";
 
-const FoodCard = () => {
+const FoodCard = ({ food }) => {
+  const { foodImage, foodCategory, description, foodName, price } = food;
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact w-full bg-base-100 shadow-xl">
       <figure>
-        <img
-          src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
+        <img src={foodImage} className="w-full h-80 object-cover" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+        <h2 className="card-title">
+          {foodName}
+          <div className="badge badge-secondary">{foodCategory}</div>
+        </h2>
+        <p className="py-2">{description}</p>
+        <div className="card-actions justify-between items-center">
+          <p className="text-yellow-500 font-bold">${price}</p>
+          <button className="primary-btn">Order Now</button>
         </div>
       </div>
     </div>
