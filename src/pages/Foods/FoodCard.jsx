@@ -52,7 +52,7 @@ const FoodCard = ({ food }) => {
       <div className="card-body">
         <h2 className="card-title">
           {foodName}
-          <div className="badge badge-secondary">{foodCategory}</div>
+          <div className="badge badge-warning">{foodCategory}</div>
         </h2>
         <p onClick={() => setIsOrder(false)} className="py-2">
           {description}
