@@ -22,9 +22,17 @@ const Foods = () => {
         heading={`Check Our Best ${category || "Food"}`}
         subHeading="Best for you"
       />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 my-20">
-        {foods && foods.map((food) => <FoodCard key={food._id} food={food} />)}
-      </div>
+      {isLoading && (
+        <div className="hero">
+          <span className="loading text-yellow-500"></span>
+        </div>
+      )}
+      {foods && Array.isArray(foods) && foods.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 my-20">
+          {foods &&
+            foods.map((food) => <FoodCard key={food._id} food={food} />)}
+        </div>
+      )}
     </>
   );
 };
