@@ -3,12 +3,16 @@
 import React from "react";
 import Navbar from "../pages/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 
 const MainLayout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div className="min-h-[calc(100vh-200px)]">
+        <Outlet />
+      </div>
+      <Footer />
     </>
   );
 };

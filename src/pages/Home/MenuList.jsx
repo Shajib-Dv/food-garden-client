@@ -9,6 +9,7 @@ import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 const MenuList = () => {
   const { data: menus = [], isLoading } = useQuery({
@@ -38,10 +39,12 @@ const MenuList = () => {
           {menus &&
             menus.map((menu) => (
               <SwiperSlide key={menu._id}>
-                <img src={menu.menuImage} className="h-full" />
-                <h3 className="md:text-4xl uppercase text-center -mt-20  text-white">
-                  {menu.menuName}
-                </h3>
+                <Link to={`/foods/${menu.menuName}`}>
+                  <img src={menu.menuImage} className="h-full w-full" />
+                  <h3 className="md:text-4xl uppercase text-center -mt-20  text-yellow-500">
+                    {menu.menuName}
+                  </h3>
+                </Link>
               </SwiperSlide>
             ))}
         </Swiper>
