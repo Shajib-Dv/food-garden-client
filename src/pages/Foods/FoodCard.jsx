@@ -65,8 +65,8 @@ const FoodCard = ({ food }) => {
               type="number"
               min={0}
               name="quantity"
-              defaultValue={quantity}
-              className="input input-warning focus:outline-none"
+              placeholder="Select Quantity"
+              className="input input-warning focus:outline-none w-full md:w-auto"
             />
           )}
           {!isOrder ? (

@@ -25,22 +25,25 @@ const MenuList = () => {
         subHeading="Order your favorite food now"
         heading="Our Menu"
       />
-      <div className="flex gap-2 overflow-auto">
+      <div className="flex gap-2 overflow-auto h-full">
         <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
+          slidesPerView={2}
+          spaceBetween={20}
           centeredSlides={true}
           pagination={{
             clickable: true,
           }}
           modules={[Pagination]}
-          className="mySwiper mb-24"
+          className="mySwiper mb-24 h-64 md:h-96"
         >
           {menus &&
             menus.map((menu) => (
               <SwiperSlide key={menu._id}>
                 <Link to={`/foods/${menu.menuName}`}>
-                  <img src={menu.menuImage} className="h-full w-full" />
+                  <img
+                    src={menu.menuImage}
+                    className="h-full w-full object-cover"
+                  />
                   <h3 className="md:text-4xl uppercase text-center -mt-20  text-yellow-500">
                     {menu.menuName}
                   </h3>

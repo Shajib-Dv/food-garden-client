@@ -53,24 +53,32 @@ const Orders = () => {
         heading="Please process your order"
         subHeading="Order Summary"
       />
-      <div className="stats bg-yellow-400 text-white w-full ">
+      <div className="stats items-center bg-[rgb(0,0,0,0.5)] text-white w-full ">
         <div className="stat w-full">
-          <div className="stat-title text-black font-semibold">Total Items</div>
+          <div className="stat-title text-yellow-600 font-semibold">
+            Total Items
+          </div>
           <div className="stat-value">{orders?.length || 0}</div>
         </div>
 
         <div className="stat w-full">
-          <div className="stat-title text-black font-semibold">Total Price</div>
+          <div className="stat-title text-yellow-600 font-semibold">
+            Total Price
+          </div>
           <div className="stat-value">${totalPrice.toFixed(2) || 0}</div>
         </div>
 
         <div className="stat w-full">
-          <div className="stat-title text-black font-semibold">
+          <div className="stat-title text-yellow-600 font-semibold">
             Delivered in
           </div>
           <div className="stat-value">
             {(deliveryTime / orders?.length).toFixed(2) || 0} min
           </div>
+        </div>
+
+        <div className="stat w-full">
+          <button className="btn btn-warning border-1">Pay Now</button>
         </div>
       </div>
 

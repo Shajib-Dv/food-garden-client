@@ -11,3 +11,6 @@
 .menu > a {
   @apply text-sm font-semibold hover:text-yellow-500;
 }
+.swiper-pagination-bullet-active {
+  @apply text-yellow-500;
+}

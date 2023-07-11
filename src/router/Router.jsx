@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import Foods from "../pages/Foods/Foods";
 import Orders from "../pages/Orders/Orders";
 import AllCategory from "../pages/Foods/AllCategory/AllCategory";
+import About from "../pages/About/About";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: "/foods/:category", element: <Foods /> },
       { path: "/foods", element: <AllCategory /> },
       { path: "/orders", element: <Orders /> },
+      { path: "/about", element: <About /> },
     ],
   },
 ]);
