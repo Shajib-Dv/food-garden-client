@@ -18,7 +18,9 @@ const Orders = () => {
   } = useQuery({
     queryKey: ["orders"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/orders");
+      const res = await axios.get(
+        "https://food-garden-server.vercel.app/orders"
+      );
       return res.data;
     },
   });
@@ -37,12 +39,14 @@ const Orders = () => {
       confirmButtonText: "Remove",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await axios.delete(`http://localhost:5000/orders/${id}`).then((res) => {
-          if (res.data.deletedCount > 0) {
-            toast.success("Item removed");
-            refetch();
-          }
-        });
+        await axios
+          .delete(`https://food-garden-server.vercel.app/orders/${id}`)
+          .then((res) => {
+            if (res.data.deletedCount > 0) {
+              toast.success("Item removed");
+              refetch();
+            }
+          });
       }
     });
   };

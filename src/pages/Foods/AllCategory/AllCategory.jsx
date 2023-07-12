@@ -11,7 +11,9 @@ const AllCategory = () => {
   const { data: foods = [], isLoading } = useQuery({
     queryKey: ["allFoods"],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/foods`);
+      const res = await axios.get(
+        `https://food-garden-server.vercel.app/foods`
+      );
       return res.data;
     },
   });

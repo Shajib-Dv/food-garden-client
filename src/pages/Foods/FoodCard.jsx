@@ -34,7 +34,7 @@ const FoodCard = ({ food }) => {
       cookingTime,
     };
 
-    axios.post(`http://localhost:5000/orders/${id}`, orderInfo).then((res) => {
+    axios.post(`https://food-garden-server.vercel.app/orders/${id}`, orderInfo).then((res) => {
       if (res.data.insertedId) {
         toast.success("Order successfully added");
       } else if (res.data.message) {

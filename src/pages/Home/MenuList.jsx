@@ -15,7 +15,7 @@ const MenuList = () => {
   const { data: menus = [], isLoading } = useQuery({
     queryKey: ["menu"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/menu");
+      const res = await axios.get("https://food-garden-server.vercel.app/menu");
       return res.data;
     },
   });

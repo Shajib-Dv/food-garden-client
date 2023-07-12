@@ -9,7 +9,9 @@ const Banner = () => {
   const { data: banners = [], isLoading } = useQuery({
     queryKey: ["Banner"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/banner");
+      const res = await axios.get(
+        "https://food-garden-server.vercel.app/banner"
+      );
       return res.data;
     },
   });

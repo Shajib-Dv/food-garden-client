@@ -15,7 +15,9 @@ const Testimonials = () => {
   const { data: reviews = [] } = useQuery({
     queryKey: ["review"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/review");
+      const res = await axios.get(
+        "https://food-garden-server.vercel.app/review"
+      );
       return res.data;
     },
   });
